@@ -1,4 +1,4 @@
-import { User, Project, Pathway, Feedback, Activity } from './types';
+import { User, Project, Pathway, Feedback, Activity, Mentor } from './types';
 
 export const USERS: User[] = [
   { id: 1, name: 'An Nguyen', mssv: '20520001', avatar: 'https://picsum.photos/seed/user1/200', isVerified: true, skills: ['React', 'TypeScript', 'Node.js', 'UI/UX'], major: 'Software Engineering', connections: 152 },
@@ -42,4 +42,12 @@ export const ACTIVITIES: Activity[] = [
     { id: 2, user: USERS[2], action: 'earned a badge', target: '"Data Analysis"', timestamp: '5 hours ago'},
     { id: 3, user: USERS[3], action: 'completed pathway', target: 'Digital Marketer Starter', timestamp: '1 day ago'},
     { id: 4, user: USERS[0], action: 'connected with', target: 'Binh Tran', timestamp: '2 days ago'},
+];
+
+export const MENTORS: Mentor[] = [
+    { id: 1, name: 'Dr. Le Anh Tuan', avatar: 'https://picsum.photos/seed/mentor1/200', title: 'AI Research Lead', company: 'Google', field: 'Artificial Intelligence', bio: 'Expert in Natural Language Processing and Deep Learning, with over 10 years of experience in building large-scale AI models.', skills: ['Machine Learning', 'Deep Learning', 'NLP', 'Python'] },
+    { id: 2, name: 'Ms. Tran My Linh', avatar: 'https://picsum.photos/seed/mentor2/200', title: 'Senior Product Manager', company: 'VNG Corporation', field: 'Product Management', bio: 'Passionate about creating user-centric products. Launched multiple successful mobile applications in the SEA market.', skills: ['Agile', 'Roadmapping', 'User Research', 'Data Analysis'] },
+    { id: 3, name: 'Mr. Pham Hoang Nam', avatar: 'https://picsum.photos/seed/mentor3/200', title: 'Head of Engineering', company: 'Tiki', field: 'Software Engineering', bio: 'Leads a team of 50+ engineers. Specialized in microservices architecture and cloud-native technologies.', skills: ['System Design', 'Go', 'Kubernetes', 'AWS'] },
+    { id: 4, name: 'Ms. Vu Ngoc Mai', avatar: 'https://picsum.photos/seed/mentor4/200', title: 'Lead UX Designer', company: 'FPT Software', field: 'UI/UX Design', bio: 'Designs intuitive and beautiful interfaces for enterprise software. Advocate for design thinking and accessibility.', skills: ['Figma', 'Design Systems', 'User Testing', 'Interaction Design'] },
+    { id: 5, name: 'Mr. Dang Khoa', avatar: 'https://picsum.photos/seed/mentor5/200', title: 'Digital Marketing Director', company: 'Shopee', field: 'Marketing', bio: 'Drives growth through performance marketing and SEO strategies. Manages multi-million dollar ad budgets.', skills: ['SEO', 'SEM', 'Google Analytics', 'Content Strategy'] },
 ];

@@ -22,7 +22,7 @@ const PillarCard: React.FC<{
         <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mx-auto mb-4">
             {icon}
         </div>
-        <h3 className="text-xl font-poppins font-semibold text-center mb-2">{title}</h3>
+        <h3 className="text-xl font-semibold text-center mb-2">{title}</h3>
         <p className="text-gray-600 text-center">{description}</p>
     </div>
 );
@@ -46,7 +46,7 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold font-poppins text-gray-900">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">
           {t('home.title1')}
           <span className="text-primary">{t('home.titleHighlight')}</span>
           {t('home.title2')}
@@ -89,13 +89,13 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
       
       <div className="grid md:grid-cols-2 gap-12">
         <div className="bg-white p-6 rounded-xl shadow-md">
-            <h2 className="text-2xl font-poppins font-bold mb-4">{t('home.feedTitle')}</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('home.feedTitle')}</h2>
             <div className="space-y-2">
                 {ACTIVITIES.map(activity => <ActivityItem key={activity.id} activity={activity} />)}
             </div>
         </div>
         <div className="bg-gradient-to-br from-primary to-blue-400 p-8 rounded-xl shadow-lg text-white">
-            <h2 className="text-2xl font-poppins font-bold mb-4">{t('home.featuredStudent')}</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('home.featuredStudent')}</h2>
             <div className="flex items-center space-x-4">
                 <img src={USERS[0].avatar} alt={USERS[0].name} className="w-20 h-20 rounded-full border-4 border-white"/>
                 <div>

@@ -68,10 +68,10 @@ const Header: React.FC<HeaderProps> = ({ activePage, setActivePage }) => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-4">
             <div className="flex-shrink-0 flex items-center space-x-3">
-                <img className="h-12 w-auto" src="https://drive.google.com/uc?export=view&id=1zVDrALfFvrPdtvUVAnKbIat8YyOqUuRn" alt="VNU-HCM Logo" />
-                <img className="h-10 w-auto" src="https://drive.google.com/uc?export=view&id=1iz8SzpTNVHhQZn9J87Pj3h6Dn9BZarR1" alt="UIT Logo" />
+                <img className="h-12 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/3/37/VNU-HCM_logo.png" alt="VNU-HCM Logo" />
+                <img className="h-10 w-auto" src="https://www.uit.edu.vn/sites/vi/files/images/Logos/Logo_UIT_Web_Transparent.png" alt="UIT Logo" />
             </div>
-            <span className="font-poppins text-xl font-bold text-gray-800 tracking-tight">
+            <span className="text-xl font-bold text-gray-800 tracking-tight">
               VNU-CONNECT <span className="text-primary">X</span>
             </span>
           </div>

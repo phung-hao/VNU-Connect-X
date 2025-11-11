@@ -59,3 +59,14 @@ export interface Activity {
   target?: string;
   timestamp: string;
 }
+
+export interface Mentor {
+  id: number;
+  name: string;
+  avatar: string;
+  title: string;
+  company: string;
+  field: string;
+  bio: string;
+  skills: string[];
+}

@@ -25,7 +25,7 @@ const PassportPage: React.FC = () => {
           />
           <div className="text-center md:text-left mt-4 md:mt-0">
             <div className="flex items-center justify-center md:justify-start space-x-2">
-              <h1 className="text-3xl font-poppins font-bold text-gray-900">{CURRENT_USER.name}</h1>
+              <h1 className="text-3xl font-bold text-gray-900">{CURRENT_USER.name}</h1>
               {CURRENT_USER.isVerified && <CheckCircleIcon className="w-7 h-7 text-primary" />}
             </div>
             <p className="text-gray-600 mt-1">{CURRENT_USER.major} - MSSV: {CURRENT_USER.mssv}</p>
@@ -65,7 +65,7 @@ const PassportPage: React.FC = () => {
       <div>
         {activeTab === 'Overview' && (
           <div className="bg-white rounded-xl shadow-md p-8">
-            <h2 className="text-2xl font-poppins font-bold mb-4">{t('passport.timelineTitle')}</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('passport.timelineTitle')}</h2>
             <p className="text-gray-600">{t('passport.timelineDesc')}</p>
             <div className="mt-6 border-l-2 border-primary pl-6 space-y-8">
                 {completedProjects.map((proj, index) => (
@@ -81,7 +81,7 @@ const PassportPage: React.FC = () => {
         )}
         {activeTab === 'Skills' && (
           <div className="bg-white rounded-xl shadow-md p-8">
-            <h2 className="text-2xl font-poppins font-bold mb-6">{t('passport.skillsTitle')}</h2>
+            <h2 className="text-2xl font-bold mb-6">{t('passport.skillsTitle')}</h2>
             <div className="flex flex-wrap gap-4">
               {CURRENT_USER.skills.map((skill) => (
                 <div key={skill} className="bg-primary/10 text-primary font-semibold px-4 py-2 rounded-lg text-center">
@@ -93,10 +93,10 @@ const PassportPage: React.FC = () => {
         )}
         {activeTab === 'Projects' && (
           <div className="space-y-6">
-            <h2 className="text-2xl font-poppins font-bold">{t('passport.projectsTitle')}</h2>
+            <h2 className="text-2xl font-bold">{t('passport.projectsTitle')}</h2>
             {completedProjects.map((project) => (
               <div key={project.id} className="bg-white rounded-xl shadow-md p-6">
-                <h3 className="font-poppins font-bold text-xl mb-1">{project.title}</h3>
+                <h3 className="font-bold text-xl mb-1">{project.title}</h3>
                 <p className="text-gray-600 mb-3">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.skills.map((skill) => (
@@ -109,7 +109,7 @@ const PassportPage: React.FC = () => {
         )}
         {activeTab === 'Feedback' && (
            <div className="space-y-6">
-             <h2 className="text-2xl font-poppins font-bold">{t('passport.feedbackTitle')}</h2>
+             <h2 className="text-2xl font-bold">{t('passport.feedbackTitle')}</h2>
              {FEEDBACKS.map((feedback, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-md p-6">
                     <div className="flex items-start space-x-4">

@@ -85,6 +85,56 @@ const enTranslations: Translations = {
     xpEarned: "{xp} XP Earned",
     continue: "Continue Journey"
   },
+  mentors: {
+    title: "Find Your Mentor",
+    subtitle: "Connect with industry experts from leading companies for guidance, feedback, and career advice.",
+    spotlight: "Mentor Spotlight",
+    directory: "Mentor Directory",
+    searchPlaceholder: "Search by name, skill, or company...",
+    allFields: "All Fields",
+    requestSession: "Request Session",
+    chat: "Chat",
+    noMentorsFound: "No Mentors Found",
+    noMentorsHint: "Try adjusting your search or filter criteria.",
+    bookingTitle: "Request a session with {name}",
+    bookingDesc: "Please select a preferred date and time for your 1-on-1 session.",
+    date: "Date",
+    time: "Time",
+    notes: "Notes for the Mentor (Optional)",
+    notesPlaceholder: "e.g., I'd like to discuss career paths in AI...",
+    sendRequest: "Send Request"
+  },
+  settings: {
+    title: "Account Settings",
+    subtitle: "Manage your profile, notifications, and privacy preferences.",
+    profile: {
+      title: "Profile Information",
+      changeAvatar: "Change Avatar",
+      name: "Full Name",
+      major: "Major",
+      save: "Save Changes"
+    },
+    language: {
+        title: "Language Preference"
+    },
+    notifications: {
+      title: "Notifications",
+      newProjects: "New Project Alerts",
+      messages: "Direct Messages",
+      pathways: "Pathway Updates"
+    },
+    privacy: {
+      title: "Profile Privacy",
+      description: "Control who can view your full PASSPORT profile.",
+      everyone: "Everyone (Public)",
+      connections: "Connections Only",
+      me: "Only Me (Private)"
+    },
+    account: {
+        logout: "Logout",
+        help: "Help Center"
+    }
+  },
   languages: {
     en: "English (EN)",
     vi: "Vietnamese (VI)"
@@ -172,6 +222,56 @@ const viTranslations: Translations = {
     subtitle: "Thực hiện các lộ trình có cấu trúc để xây dựng kỹ năng, tích lũy kinh nghiệm và đạt được mục tiêu.",
     xpEarned: "Đã nhận {xp} XP",
     continue: "Tiếp tục hành trình"
+  },
+  mentors: {
+    title: "Tìm kiếm Cố vấn",
+    subtitle: "Kết nối với các chuyên gia đầu ngành từ các công ty hàng đầu để nhận được sự hướng dẫn và lời khuyên nghề nghiệp.",
+    spotlight: "Cố vấn nổi bật",
+    directory: "Danh bạ Cố vấn",
+    searchPlaceholder: "Tìm theo tên, kỹ năng, hoặc công ty...",
+    allFields: "Tất cả lĩnh vực",
+    requestSession: "Hẹn gặp",
+    chat: "Nhắn tin",
+    noMentorsFound: "Không tìm thấy cố vấn",
+    noMentorsHint: "Hãy thử thay đổi từ khóa tìm kiếm hoặc bộ lọc.",
+    bookingTitle: "Hẹn gặp với {name}",
+    bookingDesc: "Vui lòng chọn ngày và giờ bạn muốn cho buổi gặp 1-1.",
+    date: "Ngày",
+    time: "Thời gian",
+    notes: "Ghi chú cho cố vấn (Tùy chọn)",
+    notesPlaceholder: "VD: Em muốn thảo luận về con đường sự nghiệp trong ngành AI...",
+    sendRequest: "Gửi yêu cầu"
+  },
+  settings: {
+    title: "Cài đặt tài khoản",
+    subtitle: "Quản lý hồ sơ, thông báo và tùy chọn riêng tư của bạn.",
+    profile: {
+      title: "Thông tin hồ sơ",
+      changeAvatar: "Đổi ảnh đại diện",
+      name: "Họ và tên",
+      major: "Chuyên ngành",
+      save: "Lưu thay đổi"
+    },
+    language: {
+      title: "Tùy chọn ngôn ngữ"
+    },
+    notifications: {
+      title: "Thông báo",
+      newProjects: "Thông báo dự án mới",
+      messages: "Tin nhắn trực tiếp",
+      pathways: "Cập nhật lộ trình"
+    },
+    privacy: {
+      title: "Quyền riêng tư hồ sơ",
+      description: "Kiểm soát ai có thể xem hồ sơ PASSPORT đầy đủ của bạn.",
+      everyone: "Mọi người (Công khai)",
+      connections: "Chỉ kết nối",
+      me: "Chỉ mình tôi (Riêng tư)"
+    },
+    account: {
+        logout: "Đăng xuất",
+        help: "Trung tâm trợ giúp"
+    }
   },
   languages: {
     en: "Tiếng Anh (EN)",

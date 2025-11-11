@@ -30,7 +30,7 @@ const PathwayCard: React.FC<{ pathway: Pathway }> = ({ pathway }) => {
             <div className="p-6">
                 <div className="flex justify-between items-start">
                     <div>
-                        <h3 className="text-xl font-poppins font-bold text-gray-900">{pathway.title}</h3>
+                        <h3 className="text-xl font-bold text-gray-900">{pathway.title}</h3>
                         <p className="text-sm font-semibold text-accent-yellow">{t('pathways.xpEarned', { xp: pathway.xp })}</p>
                     </div>
                     <div className="relative w-16 h-16">
@@ -81,7 +81,7 @@ const PathwaysPage: React.FC = () => {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-extrabold font-poppins text-gray-900">
+                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">
                     {t('pathways.title1')}
                     <span className="text-primary">{t('pathways.titleHighlight')}</span>
                 </h1>

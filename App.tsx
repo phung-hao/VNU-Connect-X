@@ -4,6 +4,8 @@ import HomePage from './pages/HomePage';
 import ConnectPage from './pages/ConnectPage';
 import PassportPage from './pages/PassportPage';
 import PathwaysPage from './pages/PathwaysPage';
+import MentorsPage from './pages/MentorsPage';
+import SettingsPage from './pages/SettingsPage';
 import { Page } from './types';
 import { I18nProvider, useTranslation } from './lib/i18n';
 
@@ -21,6 +23,10 @@ const AppContent: React.FC = () => {
         return <PassportPage />;
       case Page.Pathways:
         return <PathwaysPage />;
+      case Page.Mentors:
+        return <MentorsPage />;
+      case Page.Settings:
+        return <SettingsPage />;
       default:
         return <div className="p-8">Page not found: {activePage}</div>;
     }
