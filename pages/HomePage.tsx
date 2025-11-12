@@ -1,7 +1,7 @@
 import React from 'react';
 import { Page, Activity } from '../types';
 import { ACTIVITIES, USERS } from '../constants';
-import { BriefcaseIcon, PassportIcon, PathwayIcon } from '../components/icons';
+import { ConnectIcon, PassportBookIcon, PathwaysRoadIcon } from '../components/icons';
 import { useTranslation } from '../lib/i18n';
 
 interface HomePageProps {
@@ -65,21 +65,21 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
 
       <div className="grid md:grid-cols-3 gap-8 mb-20">
         <PillarCard 
-            icon={<BriefcaseIcon className="w-8 h-8"/>} 
+            icon={<ConnectIcon className="w-8 h-8"/>} 
             title={t('home.pillars.connect.title')}
             description={t('home.pillars.connect.description')}
             page={Page.Connect}
             onClick={setActivePage}
         />
         <PillarCard 
-            icon={<PassportIcon className="w-8 h-8"/>} 
+            icon={<PassportBookIcon className="w-8 h-8"/>} 
             title={t('home.pillars.passport.title')}
             description={t('home.pillars.passport.description')}
             page={Page.Passport}
             onClick={setActivePage}
         />
         <PillarCard 
-            icon={<PathwayIcon className="w-8 h-8"/>} 
+            icon={<PathwaysRoadIcon className="w-8 h-8"/>} 
             title={t('home.pillars.pathways.title')} 
             description={t('home.pillars.pathways.description')}
             page={Page.Pathways}

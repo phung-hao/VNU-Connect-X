@@ -40,6 +40,59 @@
         outline: none !important;
         box-shadow: 0 0 6px rgba(0, 123, 255, 0.25) !important;
       }
+
+      /* Chevron animation for details/summary element */
+      details[open] summary .chevron-rotate {
+        transform: rotate(180deg);
+      }
+      summary .chevron-rotate {
+        transition: transform 0.2s ease-in-out;
+      }
+      
+      /* Styles for the new Pathways timeline */
+      .timeline {
+        position: relative;
+        padding-left: 3rem; /* Space for the line and icons */
+      }
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 20px; /* Centered on the icon */
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: #e5e7eb; /* gray-200 */
+      }
+      .timeline-step {
+        position: relative;
+        margin-bottom: 1.5rem; /* space-y-6 */
+      }
+      .timeline-step:last-child {
+        margin-bottom: 0;
+      }
+      .timeline-icon-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0.25rem; /* Align with text */
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 9999px;
+        z-index: 10;
+      }
+       .timeline-step-line {
+        content: '';
+        position: absolute;
+        left: 20px;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        transition: background-color 0.5s ease;
+        z-index: 5;
+      }
     </style>
     <script>
       tailwind.config = {

@@ -4,7 +4,14 @@ export enum Page {
   Passport = 'Passport',
   Pathways = 'Pathways',
   Mentors = 'Mentors',
+  About = 'About',
   Settings = 'Settings',
+}
+
+export interface Achievement {
+  icon: string;
+  title: string;
+  description: string;
 }
 
 export interface User {
@@ -16,6 +23,18 @@ export interface User {
   skills: string[];
   major: string;
   connections: number;
+  xp: number;
+  bio?: string;
+  university?: string;
+  year?: number;
+  email?: string;
+  achievements?: Achievement[];
+  mentorConnections?: {
+    id: number;
+    name: string;
+    title: string;
+    avatar: string;
+  }[];
 }
 
 export interface Project {
@@ -39,17 +58,49 @@ export interface Feedback {
   comment: string;
 }
 
-export interface Level {
+export type MissionStatus = 'locked' | 'unlocked' | 'in-progress' | 'submitted' | 'completed';
+export type MissionType = 'connect' | 'project' | 'learn' | 'reflect';
+export type SubmissionType = 'reflection' | 'file' | 'link';
+
+export interface Mission {
   title: string;
   description: string;
-  completed: boolean;
+  status: MissionStatus;
+  xp: number;
+  type: MissionType;
+  skill: string;
+  
+  // New detailed fields
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
+  duration: string;
+  deadline?: string;
+
+  // Submission fields
+  submissionType: SubmissionType[]; // Allow multiple types
+  submissionContent?: string;
+  submissionFile?: string; // filename
+  submissionLink?: string;
+  
+  // Feedback
+  mentorFeedback?: {
+    mentorName: string;
+    mentorAvatar: string;
+    comment: string;
+    timestamp: string;
+  }[];
+
+  isVerifiedByMentor?: boolean;
+  badge?: Achievement;
 }
+
+
+export type PathwayCategory = 'Career' | 'Communication' | 'Critical Thinking' | 'Networking';
 
 export interface Pathway {
   id: number;
   title: string;
-  levels: Level[];
-  xp: number;
+  missions: Mission[];
+  category: PathwayCategory;
 }
 
 export interface Activity {
@@ -69,4 +120,5 @@ export interface Mentor {
   field: string;
   bio: string;
   skills: string[];
+  averageRating: number;
 }

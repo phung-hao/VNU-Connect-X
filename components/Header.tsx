@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ activePage, setActivePage }) => {
     const [isLangOpen, setIsLangOpen] = useState(false);
     const langRef = useRef<HTMLDivElement>(null);
 
-    const navItems = [Page.Home, Page.Connect, Page.Passport, Page.Pathways, Page.Mentors, Page.Settings];
+    const navItems = [Page.Home, Page.Connect, Page.Passport, Page.Pathways, Page.Mentors, Page.About, Page.Settings];
 
     const handleNavClick = (page: Page) => {
         setActivePage(page);

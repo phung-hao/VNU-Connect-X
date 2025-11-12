@@ -2,7 +2,23 @@ import React, { useState, useMemo } from 'react';
 import { MENTORS } from '../constants';
 import type { Mentor } from '../types';
 import { useTranslation } from '../lib/i18n';
-import { CalendarIcon, MessageSquareIcon, XIcon } from '../components/icons';
+import { CalendarIcon, MessageSquareIcon, XIcon, StarIcon } from '../components/icons';
+
+const StarRating: React.FC<{ rating: number, className?: string }> = ({ rating, className }) => {
+    const roundedRating = Math.round(rating);
+    return (
+        <div className={`flex items-center justify-center ${className}`}>
+            {[...Array(5)].map((_, i) => (
+                <StarIcon
+                    key={i}
+                    filled={i < roundedRating}
+                    className={`w-5 h-5 ${i < roundedRating ? 'text-yellow-400' : 'text-gray-300'}`}
+                />
+            ))}
+            <span className="text-gray-600 text-sm ml-2 font-semibold">{rating.toFixed(1)}</span>
+        </div>
+    );
+};
 
 const MentorCard: React.FC<{ mentor: Mentor, onBook: (mentor: Mentor) => void }> = ({ mentor, onBook }) => {
     const { t } = useTranslation();
@@ -11,8 +27,9 @@ const MentorCard: React.FC<{ mentor: Mentor, onBook: (mentor: Mentor) => void }>
             <img src={mentor.avatar} alt={mentor.name} className="w-24 h-24 rounded-full mb-4 border-4 border-primary/50" />
             <h3 className="text-lg font-bold text-gray-900">{mentor.name}</h3>
             <p className="text-sm text-primary font-semibold">{mentor.title}</p>
-            <p className="text-sm text-gray-500 mb-3">{mentor.company}</p>
-            <div className="flex flex-wrap justify-center gap-2 my-2">
+            <p className="text-sm text-gray-500">{mentor.company}</p>
+            <StarRating rating={mentor.averageRating} className="my-3" />
+            <div className="flex flex-wrap justify-center gap-2">
                 {mentor.skills.slice(0, 3).map(skill => (
                     <span key={skill} className="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-1 rounded-full">{skill}</span>
                 ))}
