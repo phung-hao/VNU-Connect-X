@@ -42,6 +42,8 @@ export interface Project {
   title: string;
   postedBy: string;
   posterType: 'Instructor' | 'Alumni' | 'Company';
+  posterAvatar?: string;
+  posterBio?: string;
   skills: string[];
   duration: string;
   reward: string;
@@ -49,6 +51,10 @@ export interface Project {
   type: 'Micro-Gig' | 'Shadow Project';
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
   domain: 'Tech' | 'Marketing' | 'Design' | 'Business';
+  status: 'Open' | 'In Progress' | 'Completed';
+  objectives?: string[];
+  deliverables?: string[];
+  deadline?: string;
 }
 
 export interface Feedback {

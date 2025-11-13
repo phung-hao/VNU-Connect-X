@@ -66,14 +66,18 @@ const Header: React.FC<HeaderProps> = ({ activePage, setActivePage }) => {
     <nav className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-4">
-            <div className="flex-shrink-0 flex items-center space-x-3">
-                <img className="h-12 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/3/37/VNU-HCM_logo.png" alt="VNU-HCM Logo" />
-                <img className="h-10 w-auto" src="https://www.uit.edu.vn/sites/vi/files/images/Logos/Logo_UIT_Web_Transparent.png" alt="UIT Logo" />
+          <div className="flex items-center">
+            <div className="flex-shrink-0 flex items-center space-x-2 md:space-x-4">
+                <a href="https://vnuhcm.edu.vn/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-200" aria-label="VNU-HCM Homepage">
+                    <img className="h-12 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/3/37/VNU-HCM_logo.png" alt="Logo Đại học Quốc gia TP.HCM" />
+                </a>
+                <a href="https://www.uit.edu.vn/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-200" aria-label="UIT Homepage">
+                    <img className="h-10 w-auto" src="https://www.uit.edu.vn/sites/vi/files/images/Logos/Logo_UIT_Web_Transparent.png" alt="Logo Trường Đại học Công nghệ Thông tin (UIT)" />
+                </a>
+                <button onClick={() => handleNavClick(Page.Home)} className="hover:scale-105 transition-transform duration-200" aria-label="VNU-CONNECT X Home">
+                     <img className="h-12 w-auto" src="https://i.postimg.cc/HsPdxmb8/20251110-1713-VNU-CONNECT-X-Logo-simple-compose-01k9pm27dje2cth1tv2n8dw6eq.png" alt="Logo ứng dụng VNU-CONNECT X" />
+                </button>
             </div>
-            <span className="text-xl font-bold text-gray-800 tracking-tight">
-              VNU-CONNECT <span className="text-primary">X</span>
-            </span>
           </div>
           <div className="hidden md:flex items-center space-x-1">
              {navItems.map((page) => (
@@ -96,8 +100,8 @@ const Header: React.FC<HeaderProps> = ({ activePage, setActivePage }) => {
                   </button>
                   {isLangOpen && (
                       <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5">
-                          <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('en'); setIsLangOpen(false); }} className={`block px-4 py-2 text-sm ${language === 'en' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'}`}>🇻🇳 {t('languages.en')}</a>
-                          <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('vi'); setIsLangOpen(false); }} className={`block px-4 py-2 text-sm ${language === 'vi' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'}`}>🇬🇧 {t('languages.vi')}</a>
+                          <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('en'); setIsLangOpen(false); }} className={`block px-4 py-2 text-sm ${language === 'en' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'}`}>🇬🇧 {t('languages.en')}</a>
+                          <a href="#" onClick={(e) => { e.preventDefault(); setLanguage('vi'); setIsLangOpen(false); }} className={`block px-4 py-2 text-sm ${language === 'vi' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'}`}>🇻🇳 {t('languages.vi')}</a>
                       </div>
                   )}
               </div>

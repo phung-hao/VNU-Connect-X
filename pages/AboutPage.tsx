@@ -47,14 +47,20 @@ const AboutPage: React.FC<AboutPageProps> = ({ setActivePage }) => {
       <div className="relative bg-primary/5 rounded-xl p-8 md:p-12 mb-16 text-center overflow-hidden">
         <HeroIllustration />
         <div className="relative z-10">
-          <div className="flex justify-center items-center space-x-4 mb-4">
-              <img className="h-14 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/3/37/VNU-HCM_logo.png" alt="VNU-HCM Logo" />
-              <img className="h-12 w-auto" src="https://www.uit.edu.vn/sites/vi/files/images/Logos/Logo_UIT_Web_Transparent.png" alt="UIT Logo" />
-          </div>
+          <img
+            className="h-12 md:h-16 w-auto mx-auto mb-4 animate-fade-in"
+            style={{maxWidth: '180px'}}
+            src="https://i.postimg.cc/HsPdxmb8/20251110-1713-VNU-CONNECT-X-Logo-simple-compose-01k9pm27dje2cth1tv2n8dw6eq.png"
+            alt="Logo ứng dụng VNU-CONNECT X"
+          />
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">{t('about.title')}</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
             {t('about.subtitle')}
           </p>
+           <div className="flex justify-center items-center space-x-4 mt-6">
+              <img className="h-12 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/3/37/VNU-HCM_logo.png" alt="VNU-HCM Logo" />
+              <img className="h-10 w-auto" src="https://www.uit.edu.vn/sites/vi/files/images/Logos/Logo_UIT_Web_Transparent.png" alt="UIT Logo" />
+          </div>
         </div>
       </div>
 
