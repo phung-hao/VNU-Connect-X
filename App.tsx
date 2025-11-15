@@ -4,7 +4,6 @@ import HomePage from './pages/HomePage';
 import ConnectPage from './pages/ConnectPage';
 import PassportPage from './pages/PassportPage';
 import PathwaysPage from './pages/PathwaysPage';
-import MentorsPage from './pages/MentorsPage';
 import AboutPage from './pages/AboutPage';
 import SettingsPage from './pages/SettingsPage';
 import { Page, Pathway, User, Mission, SubmissionType } from './types';
@@ -120,8 +119,6 @@ const AppContent: React.FC = () => {
                   currentUser={currentUser}
                   getLevelFromXp={getLevelFromXp}
                />;
-      case Page.Mentors:
-        return <MentorsPage />;
       case Page.About:
         return <AboutPage setActivePage={setActivePage} />;
       case Page.Settings:

@@ -1,12 +1,13 @@
-import { User, Project, Pathway, Feedback, Activity, Mentor } from './types';
+import { User, Project, Pathway, Feedback, Activity, Mentor, Alumni, Company } from './types';
 
 export const USERS: User[] = [
   { 
     id: 1, 
     name: 'An Nguyen', 
     mssv: '20520001', 
-    avatar: 'https://randomuser.me/api/portraits/women/34.jpg', 
+    avatar: 'https://randomuser.me/api/portraits/women/81.jpg', 
     isVerified: true, 
+    gender: 'female',
     skills: [
       'Data Analysis & Python Programming',
       'Communication & Public Speaking',
@@ -32,10 +33,13 @@ export const USERS: User[] = [
         { id: 1, name: 'Dr. Tran Quang', title: 'Lecturer, UIT', avatar: 'https://randomuser.me/api/portraits/men/81.jpg' },
         { id: 2, name: 'Linh Pham', title: 'Data Engineer at FPT Software', avatar: 'https://randomuser.me/api/portraits/women/82.jpg' },
     ],
+    interests: ['AI for Social Good', 'Product Management', 'Data Visualization']
   },
-  { id: 2, name: 'Binh Tran', mssv: '21520002', avatar: 'https://randomuser.me/api/portraits/men/36.jpg', isVerified: false, skills: ['Data Analysis', 'Python', 'SQL', 'Tableau'], major: 'Information Systems', connections: 89, xp: 0 },
-  { id: 3, name: 'Chi Le', mssv: '19520003', avatar: 'https://randomuser.me/api/portraits/women/35.jpg', isVerified: true, skills: ['Digital Marketing', 'SEO', 'Content Creation'], major: 'E-commerce', connections: 231, xp: 0 },
-  { id: 4, name: 'Dung Pham', mssv: '22520004', avatar: 'https://randomuser.me/api/portraits/women/37.jpg', isVerified: false, skills: ['Figma', 'Graphic Design', 'Illustration'], major: 'Computer Science', connections: 45, xp: 0 },
+  { id: 2, name: 'Binh Tran', mssv: '21520002', avatar: 'https://randomuser.me/api/portraits/men/85.jpg', isVerified: false, gender: 'male', skills: ['Data Analysis', 'Python', 'SQL', 'Tableau'], major: 'Information Systems', connections: 89, xp: 0, interests: ['Business Intelligence', 'E-commerce Trends', 'Database Optimization'] },
+  { id: 3, name: 'Chi Le', mssv: '19520003', avatar: 'https://randomuser.me/api/portraits/women/84.jpg', isVerified: true, gender: 'female', skills: ['Digital Marketing', 'SEO', 'Content Creation'], major: 'E-commerce', connections: 231, xp: 0, interests: ['Growth Hacking', 'Social Media Strategy', 'Consumer Psychology'] },
+  { id: 4, name: 'Dung Pham', mssv: '22520004', avatar: 'https://randomuser.me/api/portraits/women/88.jpg', isVerified: false, gender: 'female', skills: ['Figma', 'Graphic Design', 'Illustration'], major: 'Computer Science', connections: 45, xp: 0, interests: ['Mobile App Design', 'Branding', 'User Experience'] },
+  { id: 5, name: 'Hoang Vu', mssv: '20520005', avatar: 'https://randomuser.me/api/portraits/men/88.jpg', isVerified: true, gender: 'male', skills: ['React', 'TypeScript', 'Node.js'], major: 'Software Engineering', connections: 112, xp: 0, interests: ['Web Development', 'DevOps', 'FinTech'] },
+  { id: 6, name: 'Mai Tran', mssv: '21520006', avatar: 'https://randomuser.me/api/portraits/women/89.jpg', isVerified: false, gender: 'female', skills: ['Machine Learning', 'TensorFlow', 'Computer Vision'], major: 'Artificial Intelligence', connections: 76, xp: 0, interests: ['Deep Learning', 'Natural Language Processing', 'Healthcare Tech'] },
 ];
 
 export const CURRENT_USER = USERS[0];
@@ -65,7 +69,7 @@ export const PROJECTS: Project[] = [
     title: 'Build a Responsive Landing Page', 
     postedBy: 'Dr. Hoang Anh', 
     posterType: 'Instructor', 
-    posterAvatar: 'https://randomuser.me/api/portraits/men/75.jpg',
+    posterAvatar: 'https://randomuser.me/api/portraits/men/81.jpg',
     posterBio: 'A lecturer at UIT with a focus on web technologies and human-computer interaction.',
     skills: ['HTML', 'CSS', 'React', 'Responsive Design'], 
     duration: '1 Week', 
@@ -84,7 +88,7 @@ export const PROJECTS: Project[] = [
     title: 'UI/UX Redesign for Student Portal', 
     postedBy: 'Alumni Network', 
     posterType: 'Alumni', 
-    posterAvatar: 'https://randomuser.me/api/portraits/men/78.jpg',
+    posterAvatar: 'https://randomuser.me/api/portraits/men/83.jpg',
     posterBio: 'A group of passionate alumni dedicated to improving the student experience at UIT.',
     skills: ['Figma', 'UI/UX', 'User Research'], 
     duration: '2 Weeks', 
@@ -141,7 +145,7 @@ export const PROJECTS: Project[] = [
     title: 'Design a Social Media Content Calendar', 
     postedBy: 'Ms. Mai Linh', 
     posterType: 'Instructor', 
-    posterAvatar: 'https://randomuser.me/api/portraits/women/76.jpg',
+    posterAvatar: 'https://randomuser.me/api/portraits/women/82.jpg',
     posterBio: 'A lecturer in the Marketing department with a passion for digital communication.',
     skills: ['Content Strategy', 'Social Media', 'Marketing'], 
     duration: '4 Hours', 
@@ -327,9 +331,21 @@ export const ACTIVITIES: Activity[] = [
 ];
 
 export const MENTORS: Mentor[] = [
-    { id: 1, name: 'Dr. Le Anh Tuan', avatar: 'https://randomuser.me/api/portraits/men/78.jpg', title: 'AI Research Lead', company: 'Google', field: 'Artificial Intelligence', bio: 'Expert in Natural Language Processing and Deep Learning, with over 10 years of experience in building large-scale AI models.', skills: ['Machine Learning', 'Deep Learning', 'NLP', 'Python'], averageRating: 4.9 },
-    { id: 2, name: 'Ms. Tran My Linh', avatar: 'https://randomuser.me/api/portraits/women/79.jpg', title: 'Senior Product Manager', company: 'VNG Corporation', field: 'Product Management', bio: 'Passionate about creating user-centric products. Launched multiple successful mobile applications in the SEA market.', skills: ['Agile', 'Roadmapping', 'User Research', 'Data Analysis'], averageRating: 4.8 },
-    { id: 3, name: 'Mr. Pham Hoang Nam', avatar: 'https://randomuser.me/api/portraits/men/80.jpg', title: 'Head of Engineering', company: 'Tiki', field: 'Software Engineering', bio: 'Leads a team of 50+ engineers. Specialized in microservices architecture and cloud-native technologies.', skills: ['System Design', 'Go', 'Kubernetes', 'AWS'], averageRating: 4.7 },
-    { id: 4, name: 'Ms. Vu Ngoc Mai', avatar: 'https://randomuser.me/api/portraits/women/85.jpg', title: 'Lead UX Designer', company: 'FPT Software', field: 'UI/UX Design', bio: 'Designs intuitive and beautiful interfaces for enterprise software. Advocate for design thinking and accessibility.', skills: ['Figma', 'Design Systems', 'User Testing', 'Interaction Design'], averageRating: 5.0 },
-    { id: 5, name: 'Mr. Dang Khoa', avatar: 'https://randomuser.me/api/portraits/men/86.jpg', title: 'Digital Marketing Director', company: 'Shopee', field: 'Marketing', bio: 'Drives growth through performance marketing and SEO strategies. Manages multi-million dollar ad budgets.', skills: ['SEO', 'SEM', 'Google Analytics', 'Content Strategy'], averageRating: 4.6 },
+    { id: 1, name: 'Dr. Le Anh Tuan', avatar: 'https://randomuser.me/api/portraits/men/45.jpg', gender: 'male', title: 'AI Research Lead', company: 'Google', field: 'Artificial Intelligence', bio: 'Expert in Natural Language Processing and Deep Learning, with over 10 years of experience in building large-scale AI models.', skills: ['Machine Learning', 'Deep Learning', 'NLP', 'Python'], averageRating: 4.9 },
+    { id: 2, name: 'Ms. Tran My Linh', avatar: 'https://randomuser.me/api/portraits/women/45.jpg', gender: 'female', title: 'Senior Product Manager', company: 'VNG Corporation', field: 'Product Management', bio: 'Passionate about creating user-centric products. Launched multiple successful mobile applications in the SEA market.', skills: ['Agile', 'Roadmapping', 'User Research', 'Data Analysis'], averageRating: 4.8 },
+    { id: 3, name: 'Mr. Pham Hoang Nam', avatar: 'https://randomuser.me/api/portraits/men/55.jpg', gender: 'male', title: 'Head of Engineering', company: 'Tiki', field: 'Software Engineering', bio: 'Leads a team of 50+ engineers. Specialized in microservices architecture and cloud-native technologies.', skills: ['System Design', 'Go', 'Kubernetes', 'AWS'], averageRating: 4.7 },
+    { id: 4, name: 'Ms. Vu Ngoc Mai', avatar: 'https://randomuser.me/api/portraits/women/55.jpg', gender: 'female', title: 'Lead UX Designer', company: 'FPT Software', field: 'UI/UX Design', bio: 'Designs intuitive and beautiful interfaces for enterprise software. Advocate for design thinking and accessibility.', skills: ['Figma', 'Design Systems', 'User Testing', 'Interaction Design'], averageRating: 5.0 },
+    { id: 5, name: 'Mr. Dang Khoa', avatar: 'https://randomuser.me/api/portraits/men/65.jpg', gender: 'male', title: 'Digital Marketing Director', company: 'Shopee', field: 'Marketing', bio: 'Drives growth through performance marketing and SEO strategies. Manages multi-million dollar ad budgets.', skills: ['SEO', 'SEM', 'Google Analytics', 'Content Strategy'], averageRating: 4.6 },
+];
+
+export const ALUMNI: Alumni[] = [
+  { id: 1, name: 'Linh Pham', avatar: 'https://randomuser.me/api/portraits/women/82.jpg', gender: 'female', graduationMajor: 'Information Systems', industry: 'Data Engineering', company: 'FPT Software', bio: 'Recent UIT graduate passionate about big data pipelines and cloud technologies. Happy to share my journey from student to data engineer.', skills: ['Python', 'SQL', 'Spark', 'AWS'] },
+  { id: 2, name: 'Tuan Nguyen', avatar: 'https://randomuser.me/api/portraits/men/82.jpg', gender: 'male', graduationMajor: 'Computer Science', industry: 'Mobile Development', company: 'Grab', bio: 'Focused on building scalable Android applications. I enjoy helping students navigate technical interviews and choose their career paths.', skills: ['Kotlin', 'Android SDK', 'Jetpack Compose'] },
+  { id: 3, name: 'Quynh Anh Tran', avatar: 'https://randomuser.me/api/portraits/women/83.jpg', gender: 'female', graduationMajor: 'E-commerce', industry: 'Digital Marketing', company: 'Lazada', bio: 'Specializing in performance marketing and e-commerce strategy. I can provide insights on campaign optimization and market analysis.', skills: ['Google Ads', 'Facebook Ads', 'SEO'] },
+];
+
+export const COMPANIES: Company[] = [
+  { id: 1, name: 'VNG Corporation', logo: 'https://images.seeklogo.com/logo-png/49/1/vng-corp-logo-png_seeklogo-492551.png', bio: 'A leading technology company in Vietnam, focused on digital content, entertainment, and cloud services.', roles: ['Marketing', 'Data Analysis', 'Product Management'], openGigs: PROJECTS.filter(p => p.postedBy === 'VNG Corporation').length },
+  { id: 2, name: 'Tiki', logo: 'https://images.seeklogo.com/logo-png/53/1/tiki-logo-png_seeklogo-531327.png', bio: 'One of the leading e-commerce platforms in Vietnam, known for its fast delivery and customer service.', roles: ['Software Engineering', 'Database Design', 'Logistics'], openGigs: PROJECTS.filter(p => p.postedBy === 'Tiki').length },
+  { id: 3, name: 'FPT Software', logo: 'https://images.seeklogo.com/logo-png/46/1/fpt-software-logo-png_seeklogo-468048.png', bio: 'A global IT services provider headquartered in Vietnam, working with top-tier clients worldwide.', roles: ['Software Development', 'Quality Assurance', 'Cloud Engineering'], openGigs: PROJECTS.filter(p => p.postedBy === 'FPT Software').length },
 ];

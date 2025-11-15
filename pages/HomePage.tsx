@@ -1,7 +1,7 @@
 import React from 'react';
 import { Page, Activity } from '../types';
 import { ACTIVITIES, USERS } from '../constants';
-import { ConnectIcon, PassportBookIcon, PathwaysRoadIcon } from '../components/icons';
+import { ConnectIcon, PassportBookIcon, PathwaysRoadIcon, Avatar } from '../components/icons';
 import { useTranslation } from '../lib/i18n';
 
 interface HomePageProps {
@@ -29,7 +29,7 @@ const PillarCard: React.FC<{
 
 const ActivityItem: React.FC<{ activity: Activity }> = ({ activity }) => (
     <div className="flex items-center space-x-4 p-4 hover:bg-gray-100 rounded-lg">
-        <img src={activity.user.avatar} alt={activity.user.name} className="w-10 h-10 rounded-full"/>
+        <Avatar src={activity.user.avatar} alt={activity.user.name} gender={activity.user.gender} className="w-10 h-10 rounded-full"/>
         <div>
             <p className="text-sm">
                 <span className="font-semibold">{activity.user.name}</span>
@@ -97,7 +97,7 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
         <div className="bg-gradient-to-br from-primary to-blue-400 p-8 rounded-xl shadow-lg text-white">
             <h2 className="text-2xl font-bold mb-4">{t('home.featuredStudent')}</h2>
             <div className="flex items-center space-x-4">
-                <img src={USERS[0].avatar} alt={USERS[0].name} className="w-20 h-20 rounded-full border-4 border-white"/>
+                <Avatar src={USERS[0].avatar} alt={USERS[0].name} gender={USERS[0].gender} className="w-20 h-20 rounded-full border-4 border-white"/>
                 <div>
                     <h3 className="text-xl font-semibold">{USERS[0].name}</h3>
                     <p className="text-blue-100">{USERS[0].major}</p>

@@ -1,7 +1,7 @@
 import React, { useState, ReactNode } from 'react';
 import { CURRENT_USER } from '../constants';
 import { useTranslation } from '../lib/i18n';
-import { UserIcon, BellIcon, LockIcon, LogOutIcon, HelpCircleIcon, GlobeIcon } from '../components/icons';
+import { UserIcon, BellIcon, LockIcon, LogOutIcon, HelpCircleIcon, GlobeIcon, Avatar } from '../components/icons';
 
 const SettingsCard: React.FC<{ title: string, children: ReactNode, icon: ReactNode }> = ({ title, children, icon }) => (
     <div className="bg-white rounded-xl shadow-md">
@@ -53,7 +53,7 @@ const SettingsPage: React.FC = () => {
                     <SettingsCard title={t('settings.profile.title')} icon={<UserIcon />}>
                         <form className="space-y-4" onSubmit={e => e.preventDefault()}>
                             <div className="flex items-center space-x-4">
-                                <img src={CURRENT_USER.avatar} alt="avatar" className="w-16 h-16 rounded-full" />
+                                <Avatar src={CURRENT_USER.avatar} alt="avatar" gender={CURRENT_USER.gender} className="w-16 h-16 rounded-full" />
                                 <button className="text-sm font-semibold text-primary hover:underline">{t('settings.profile.changeAvatar')}</button>
                             </div>
                             <div>

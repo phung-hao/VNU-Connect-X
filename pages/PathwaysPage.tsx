@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import type { Pathway, Mission, PathwayCategory, User, MissionStatus } from '../types';
-import { CheckCircleIcon, LockIcon, MessageSquareIcon, TargetIcon, UserIcon, XIcon, BrainIcon, BriefcaseIcon, StarIcon, ClockIcon, CalendarIcon, UploadIcon, LinkIcon } from '../components/icons';
+import { CheckCircleIcon, LockIcon, MessageSquareIcon, TargetIcon, UserIcon, XIcon, BrainIcon, BriefcaseIcon, StarIcon, ClockIcon, CalendarIcon, UploadIcon, LinkIcon, Avatar } from '../components/icons';
 import { useTranslation } from '../lib/i18n';
 
 const MissionTypeIcon: React.FC<{ type: Mission['type'], className?: string }> = ({ type, className = "w-5 h-5" }) => {
@@ -206,9 +206,11 @@ const MissionDetailModal: React.FC<{
                                             <h3 className="text-lg font-bold text-gray-800 mb-3">{t('pathways.missionDetails.mentorFeedback')}</h3>
                                             {mission.mentorFeedback && mission.mentorFeedback.length > 0 ? (
                                                 <div className="space-y-4">
-                                                    {mission.mentorFeedback.map((fb, idx) => (
+                                                    {mission.mentorFeedback.map((fb, idx) => {
+                                                        const gender = fb.mentorName.startsWith('Dr.') ? 'male' : 'female';
+                                                        return (
                                                         <div key={idx} className="flex items-start space-x-3 bg-blue-50 p-4 rounded-lg">
-                                                            <img src={fb.mentorAvatar} alt={fb.mentorName} className="w-10 h-10 rounded-full flex-shrink-0" />
+                                                            <Avatar gender={gender} src={fb.mentorAvatar} alt={fb.mentorName} className="w-10 h-10 rounded-full flex-shrink-0" />
                                                             <div>
                                                                 <div className="flex items-baseline space-x-2">
                                                                     <p className="font-bold">{fb.mentorName}</p>
@@ -217,7 +219,7 @@ const MissionDetailModal: React.FC<{
                                                                 <p className="text-gray-700">{fb.comment}</p>
                                                             </div>
                                                         </div>
-                                                    ))}
+                                                    )})}
                                                 </div>
                                             ) : (
                                                 <p className="text-gray-500 italic">{t('pathways.missionDetails.noFeedback')}</p>
@@ -282,7 +284,7 @@ const UserProgressHeader: React.FC<{ user: User, getLevelFromXp: (xp: number) =>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                     <div className="relative">
-                        <img src={user.avatar} alt={user.name} className="w-16 h-16 rounded-full" />
+                        <Avatar gender={user.gender} src={user.avatar} alt={user.name} className="w-16 h-16 rounded-full" />
                         <div className="absolute -bottom-2 -right-2 bg-primary text-white text-xs font-bold w-8 h-8 rounded-full border-2 border-white flex items-center justify-center">{level}</div>
                     </div>
                     <div>

@@ -10,7 +10,6 @@ const enTranslations: Translations = {
     connect: "Connect",
     passport: "Passport",
     pathways: "Pathways",
-    mentors: "Mentors",
     about: "About",
     settings: "Settings"
   },
@@ -47,6 +46,13 @@ const enTranslations: Translations = {
     viewProfile: "View Profile"
   },
   connect: {
+    title: "CONNECT — Micro-Projects & Smart Matching",
+    subtitle: "Connect through action. Build real skills, real networks, real impact.",
+    back: "Back to Connect Hub",
+    tabs: {
+      microGigs: "Micro-Gigs",
+      smartMatching: "Smart Matching Hub"
+    },
     filters: "Filters",
     projectType: "Project Type",
     difficulty: "Difficulty",
@@ -72,7 +78,55 @@ const enTranslations: Translations = {
     apply: "Apply for this Project",
     reasonForJoining: "Briefly state why you are interested in this project...",
     uploadPortfolio: "Upload Portfolio (Optional)",
-    submitApplication: "Submit Application"
+    submitApplication: "Submit Application",
+    smartMatching: {
+      title: "Smart Matching Hub",
+      viewDetails: "View Details",
+      mentors: {
+        title: "Mentor Matching",
+        desc: "Connect with instructors, alumni, and professionals for guidance."
+      },
+      peers: {
+        title: "Peer Collaboration",
+        desc: "Find students with similar goals or complementary skills to team up."
+      },
+      alumni: {
+        title: "Alumni Network",
+        desc: "Get project feedback and career tips from recent graduates."
+      },
+      companies: {
+        title: "Company Matching",
+        desc: "Link up with partner companies based on your skills and interests."
+      }
+    },
+    mentors: {
+      searchPlaceholder: "Search by name, skill, or company...",
+      allFields: "All Fields",
+      requestSession: "Request Session",
+      chat: "Chat",
+      noMentorsFound: "No Mentors Found",
+      noMentorsHint: "Try adjusting your search or filter criteria.",
+      bookingTitle: "Request a session with {name}",
+      bookingDesc: "Please select a preferred date and time for your 1-on-1 session.",
+      date: "Date",
+      time: "Time",
+      notes: "Notes for the Mentor (Optional)",
+      notesPlaceholder: "e.g., I'd like to discuss career paths in AI...",
+      sendRequest: "Send Request"
+    },
+    All: "All",
+    Open: "Open",
+    'In Progress': "In Progress",
+    Completed: "Completed",
+    'Micro-Gig': "Micro-Gig",
+    'Shadow Project': "Shadow Project",
+    Beginner: "Beginner",
+    Intermediate: "Intermediate",
+    Advanced: "Advanced",
+    Tech: "Tech",
+    Marketing: "Marketing",
+    Design: "Design",
+    Business: "Business",
   },
   passport: {
     connections: "{count} Connections",
@@ -134,57 +188,41 @@ const enTranslations: Translations = {
       viewSubmission: "Your Submission"
     }
   },
-  mentors: {
-    title: "Find Your Mentor",
-    subtitle: "Connect with industry experts from leading companies for guidance, feedback, and career advice.",
-    spotlight: "Mentor Spotlight",
-    directory: "Mentor Directory",
-    searchPlaceholder: "Search by name, skill, or company...",
-    allFields: "All Fields",
-    requestSession: "Request Session",
-    chat: "Chat",
-    noMentorsFound: "No Mentors Found",
-    noMentorsHint: "Try adjusting your search or filter criteria.",
-    bookingTitle: "Request a session with {name}",
-    bookingDesc: "Please select a preferred date and time for your 1-on-1 session.",
-    date: "Date",
-    time: "Time",
-    notes: "Notes for the Mentor (Optional)",
-    notesPlaceholder: "e.g., I'd like to discuss career paths in AI...",
-    sendRequest: "Send Request"
-  },
   about: {
     title: "About VNU-CONNECT X",
     subtitle: "An academic-career ecosystem designed to build social capital and practical skills for students.",
     vision: {
-        title: "Vision & Philosophy",
-        content1: "VNU-CONNECT X is an academic-career ecosystem developed by Vietnam National University Ho Chi Minh City.",
-        content2: "The platform aims to build social capital and practical skills for students through experiential learning and valuable connections.",
-        philosophy: "Core philosophy: “From passive connection to active collaboration”."
+      title: "VISION & DESIGN PHILOSOPHY",
+      intro: "VNU-CONNECT X is not a standalone application but a career–academic connection ecosystem designed to:",
+      point1: "Redefine networking: shifting from “finding people” to “creating value together through action.”",
+      point2: "Transform connection into learning: every interaction becomes an opportunity to develop soft skills and professional competencies.",
+      point3: "Build intrinsic motivation: students grow through real-world experiences, rewarded and reflected in their verified competency portfolio."
     },
-    structure: {
-        title: "Core Structure",
-        content: "The ecosystem operates on three pillars:",
-        pillars: {
-            connect: "CONNECT – A collaborative space for micro-projects between students, instructors, and companies.",
-            passport: "PASSPORT – A digital competency portfolio that records and verifies academic and professional achievements.",
-            pathways: "PATHWAYS – Gamified development roadmaps that help students learn by doing."
-        }
+    meaning: {
+      title: "MEANING BEHIND THE NAME “VNU-CONNECT X”",
+      intro: "The “X” symbolizes three core developmental dimensions:",
+      experience: {
+        title: "eXperience",
+        description: "Learning through real-world action."
+      },
+      exchange: {
+        title: "eXchange",
+        description: "Sharing knowledge, skills, and opportunities across students, mentors, and industry partners."
+      },
+      explore: {
+        title: "eXplore",
+        description: "Discovering oneself and exploring new professional pathways."
+      }
     },
-    impact: {
-        title: "Impact",
-        content1: "VNU-CONNECT X helps students develop soft skills, build confidence, and create a sustainable professional network.",
-        content2: "The university can track graduate outcomes, companies can access talent, and alumni can contribute back to the community."
-    },
-    credits: {
-        title: "Credits",
-        content: "Developed by a team of students from the University of Information Technology – VNU-HCM (UIT), under the guidance of faculty advisors and in collaboration with corporate partners."
+    team: {
+      title: "DEVELOPMENT TEAM",
+      content: "Team ISeven of University of Information Technology"
     },
     learnMore: {
-        title: "Learn more about how it works",
-        connect: "Explore CONNECT",
-        passport: "View PASSPORT",
-        pathways: "Start a PATHWAY"
+      title: "Learn more about how it works",
+      connect: "Explore CONNECT",
+      passport: "View PASSPORT",
+      pathways: "Start a PATHWAY"
     }
   },
   settings: {
@@ -231,7 +269,6 @@ const viTranslations: Translations = {
     connect: "Kết nối",
     passport: "Hồ sơ",
     pathways: "Lộ trình",
-    mentors: "Cố vấn",
     about: "Giới thiệu",
     settings: "Cài đặt"
   },
@@ -268,6 +305,13 @@ const viTranslations: Translations = {
     viewProfile: "Xem hồ sơ"
   },
   connect: {
+    title: "CONNECT — Dự án nhỏ & Kết nối thông minh",
+    subtitle: "Kết nối qua hành động. Xây dựng kỹ năng thật, mạng lưới thật, tạo ảnh hưởng thật.",
+    back: "Quay lại Trung tâm Kết nối",
+    tabs: {
+      microGigs: "Dự án nhỏ",
+      smartMatching: "Kết nối thông minh"
+    },
     filters: "Bộ lọc",
     projectType: "Loại dự án",
     difficulty: "Độ khó",
@@ -293,7 +337,64 @@ const viTranslations: Translations = {
     apply: "Ứng tuyển dự án",
     reasonForJoining: "Nêu ngắn gọn lý do bạn quan tâm đến dự án này...",
     uploadPortfolio: "Tải lên Portfolio (Không bắt buộc)",
-    submitApplication: "Nộp đơn ứng tuyển"
+    submitApplication: "Nộp đơn ứng tuyển",
+    smartMatching: {
+      title: "Trung tâm Kết nối thông minh",
+      viewDetails: "Xem chi tiết",
+      mentors: {
+        title: "Kết nối Cố vấn",
+        desc: "Kết nối với giảng viên, cựu sinh viên, và chuyên gia để nhận định hướng."
+      },
+// Fix: Merged duplicate 'peers', 'alumni', and 'companies' translation keys.
+      peers: {
+          title: "Hợp tác cùng bạn bè",
+          desc: "Tìm sinh viên có cùng mục tiêu hoặc kỹ năng bổ trợ để lập nhóm.",
+          subtitle: "AI gợi ý các sinh viên có cùng mục tiêu hoặc kỹ năng bổ trợ để bạn hợp tác.",
+          connectNow: "Kết nối ngay"
+      },
+      alumni: {
+          title: "Mạng lưới Cựu sinh viên",
+          desc: "Nhận phản hồi dự án và lời khuyên nghề nghiệp từ người đi trước.",
+          subtitle: "Kết nối với các cựu sinh viên thành công để học hỏi kinh nghiệm.",
+          askForAdvice: "Xin lời khuyên"
+      },
+      companies: {
+          title: "Kết nối Doanh nghiệp",
+          desc: "Liên kết với các công ty đối tác dựa trên kỹ năng và sở thích của bạn.",
+          subtitle: "Khám phá các cơ hội từ những đối tác hàng đầu của trường.",
+          roles: "Vị trí tuyển dụng",
+          openGigs: "{count} dự án đang mở",
+          connect: "Kết nối"
+      }
+    },
+    mentors: {
+      searchPlaceholder: "Tìm theo tên, kỹ năng, hoặc công ty...",
+      allFields: "Tất cả lĩnh vực",
+      requestSession: "Hẹn gặp",
+      chat: "Nhắn tin",
+      noMentorsFound: "Không tìm thấy cố vấn",
+      noMentorsHint: "Hãy thử thay đổi từ khóa tìm kiếm hoặc bộ lọc.",
+      bookingTitle: "Hẹn gặp với {name}",
+      bookingDesc: "Vui lòng chọn ngày và giờ bạn muốn cho buổi gặp 1-1.",
+      date: "Ngày",
+      time: "Thời gian",
+      notes: "Ghi chú cho cố vấn (Tùy chọn)",
+      notesPlaceholder: "VD: Em muốn thảo luận về con đường sự nghiệp trong ngành AI...",
+      sendRequest: "Gửi yêu cầu"
+    },
+    All: "Tất cả",
+    Open: "Đang mở",
+    'In Progress': "Đang thực hiện",
+    Completed: "Đã hoàn thành",
+    'Micro-Gig': "Dự án nhỏ",
+    'Shadow Project': "Dự án thực tập",
+    Beginner: "Cơ bản",
+    Intermediate: "Trung bình",
+    Advanced: "Nâng cao",
+    Tech: "Công nghệ",
+    Marketing: "Marketing",
+    Design: "Thiết kế",
+    Business: "Kinh doanh",
   },
   passport: {
     connections: "{count} kết nối",
@@ -355,57 +456,41 @@ const viTranslations: Translations = {
       viewSubmission: "Bài đã nộp"
     }
   },
-  mentors: {
-    title: "Tìm kiếm Cố vấn",
-    subtitle: "Kết nối với các chuyên gia đầu ngành từ các công ty hàng đầu để nhận được sự hướng dẫn và lời khuyên nghề nghiệp.",
-    spotlight: "Cố vấn nổi bật",
-    directory: "Danh bạ Cố vấn",
-    searchPlaceholder: "Tìm theo tên, kỹ năng, hoặc công ty...",
-    allFields: "Tất cả lĩnh vực",
-    requestSession: "Hẹn gặp",
-    chat: "Nhắn tin",
-    noMentorsFound: "Không tìm thấy cố vấn",
-    noMentorsHint: "Hãy thử thay đổi từ khóa tìm kiếm hoặc bộ lọc.",
-    bookingTitle: "Hẹn gặp với {name}",
-    bookingDesc: "Vui lòng chọn ngày và giờ bạn muốn cho buổi gặp 1-1.",
-    date: "Ngày",
-    time: "Thời gian",
-    notes: "Ghi chú cho cố vấn (Tùy chọn)",
-    notesPlaceholder: "VD: Em muốn thảo luận về con đường sự nghiệp trong ngành AI...",
-    sendRequest: "Gửi yêu cầu"
-  },
   about: {
     title: "Giới thiệu về VNU-CONNECT X",
     subtitle: "Hệ sinh thái kết nối học thuật – nghề nghiệp được thiết kế để kiến tạo vốn xã hội và năng lực thực chiến cho sinh viên.",
     vision: {
-        title: "Tầm nhìn & Triết lý",
-        content1: "VNU-CONNECT X là hệ sinh thái kết nối học thuật – nghề nghiệp được phát triển bởi Đại học Quốc gia TP.HCM.",
-        content2: "Mục tiêu của nền tảng là kiến tạo vốn xã hội và năng lực thực chiến cho sinh viên thông qua học tập trải nghiệm và kết nối giá trị.",
-        philosophy: "Triết lý cốt lõi: “Từ kết nối thụ động đến hợp tác chủ động”."
+      title: "TẦM NHÌN VÀ TRIẾT LÝ THIẾT KẾ",
+      intro: "VNU-CONNECT X không phải là một ứng dụng đơn lẻ, mà là một hệ sinh thái kết nối học thuật – nghề nghiệp, được xây dựng nhằm:",
+      point1: "Tái định nghĩa networking: từ việc “tìm người quen biết” sang “tạo giá trị cùng nhau thông qua hành động”.",
+      point2: "Biến kết nối thành học tập: mỗi tương tác đều là một cơ hội rèn luyện kỹ năng mềm và năng lực chuyên môn.",
+      point3: "Tạo động lực nội tại: sinh viên phát triển năng lực qua trải nghiệm thực tế và được ghi nhận bằng thành tích hiển thị trong hồ sơ năng lực."
     },
-    structure: {
-        title: "Cấu trúc hệ sinh thái",
-        content: "Hệ sinh thái vận hành trên ba trụ cột:",
-        pillars: {
-            connect: "CONNECT – Không gian hợp tác dự án vi mô giữa sinh viên, giảng viên và doanh nghiệp.",
-            passport: "PASSPORT – Hồ sơ năng lực số, ghi nhận và xác thực thành tích học tập – nghề nghiệp.",
-            pathways: "PATHWAYS – Lộ trình phát triển được game-hoá, giúp sinh viên học qua hành động."
-        }
+    meaning: {
+      title: "Ý NGHĨA TÊN GỌI “VNU-CONNECT X”",
+      intro: "Ba tầng ý nghĩa của chữ “X” thể hiện định hướng phát triển của hệ sinh thái:",
+      experience: {
+        title: "eXperience",
+        description: "Trải nghiệm thực tế, học bằng hành động."
+      },
+      exchange: {
+        title: "eXchange",
+        description: "Trao đổi tri thức, kỹ năng và cơ hội giữa sinh viên – giảng viên – doanh nghiệp."
+      },
+      explore: {
+        title: "eXplore",
+        description: "Khám phá bản thân và mở rộng các lĩnh vực nghề nghiệp mới."
+      }
     },
-    impact: {
-        title: "Tác động",
-        content1: "VNU-CONNECT X giúp sinh viên rèn luyện kỹ năng mềm, xây dựng sự tự tin và tạo dựng mạng lưới chuyên môn bền vững.",
-        content2: "Nhà trường có thể theo dõi năng lực đầu ra, doanh nghiệp tiếp cận nhân tài, còn cựu sinh viên đóng góp trở lại cộng đồng."
-    },
-    credits: {
-        title: "Đơn vị phát triển",
-        content: "Được phát triển bởi nhóm sinh viên Trường Đại học Công nghệ Thông tin – ĐHQG TP.HCM (UIT), dưới sự cố vấn của giảng viên hướng dẫn và phối hợp cùng các đối tác doanh nghiệp."
+    team: {
+      title: "ĐỘI NGŨ PHÁT TRIỂN",
+      content: "Nhóm ISeven thuộc Trường Đại học Công nghệ Thông tin – ĐHQG TP.HCM"
     },
     learnMore: {
-        title: "Tìm hiểu thêm về cách hoạt động",
-        connect: "Khám phá CONNECT",
-        passport: "Xem PASSPORT",
-        pathways: "Bắt đầu LỘ TRÌNH"
+      title: "Tìm hiểu thêm về cách hoạt động",
+      connect: "Khám phá CONNECT",
+      passport: "Xem PASSPORT",
+      pathways: "Bắt đầu LỘ TRÌNH"
     }
   },
   settings: {
@@ -484,7 +569,9 @@ export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   const t = (key: string, params?: { [key: string]: string | number }): string => {
-    let translation = getNestedTranslation(translations[language], key) || key;
+    let translation = getNestedTranslation(translations[language], `connect.${key}`) 
+                   || getNestedTranslation(translations[language], key) 
+                   || key;
     if (params) {
         Object.keys(params).forEach(pKey => {
             translation = translation.replace(`{${pKey}}`, String(params[pKey]));

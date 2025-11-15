@@ -3,7 +3,6 @@ export enum Page {
   Connect = 'Connect',
   Passport = 'Passport',
   Pathways = 'Pathways',
-  Mentors = 'Mentors',
   About = 'About',
   Settings = 'Settings',
 }
@@ -20,6 +19,7 @@ export interface User {
   mssv: string;
   avatar: string;
   isVerified: boolean;
+  gender: 'male' | 'female';
   skills: string[];
   major: string;
   connections: number;
@@ -35,7 +35,30 @@ export interface User {
     title: string;
     avatar: string;
   }[];
+  interests?: string[];
 }
+
+export interface Alumni {
+  id: number;
+  name: string;
+  avatar: string;
+  gender: 'male' | 'female';
+  graduationMajor: string;
+  industry: string;
+  company: string;
+  bio: string;
+  skills: string[];
+}
+
+export interface Company {
+  id: number;
+  name: string;
+  logo: string;
+  bio: string;
+  roles: string[];
+  openGigs: number;
+}
+
 
 export interface Project {
   id: number;
@@ -121,6 +144,7 @@ export interface Mentor {
   id: number;
   name: string;
   avatar: string;
+  gender: 'male' | 'female';
   title: string;
   company: string;
   field: string;

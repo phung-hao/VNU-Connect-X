@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PROJECTS, FEEDBACKS, ACTIVITIES } from '../constants';
-import { CheckCircleIcon, ShareIcon, UserIcon, MessageSquareIcon } from '../components/icons';
+import { CheckCircleIcon, ShareIcon, UserIcon, MessageSquareIcon, Avatar } from '../components/icons';
 import { useTranslation } from '../lib/i18n';
 import type { Activity, User, Pathway } from '../types';
 
@@ -73,10 +73,11 @@ const PassportPage: React.FC<PassportPageProps> = ({ user, pathways }) => {
       {/* Profile Header */}
       <div className="bg-white rounded-xl shadow-md p-6 md:p-8 mb-8">
         <div className="flex flex-col lg:flex-row items-center lg:space-x-10">
-          <img
-            className="w-32 h-32 rounded-full border-4 border-primary shadow-lg flex-shrink-0"
+          <Avatar
+            gender={user.gender}
             src={user.avatar}
             alt={user.name}
+            className="w-32 h-32 rounded-full border-4 border-primary shadow-lg flex-shrink-0"
           />
           <div className="flex-grow text-center lg:text-left mt-4 lg:mt-0">
             <div className="flex items-center justify-center lg:justify-start space-x-2">
@@ -156,15 +157,17 @@ const PassportPage: React.FC<PassportPageProps> = ({ user, pathways }) => {
                 </Card>
                 <Card title="Mentor Connections">
                   <div className="space-y-4">
-                    {user.mentorConnections?.map(mentor => (
+                    {user.mentorConnections?.map(mentor => {
+                      const gender = mentor.name.startsWith('Dr.') ? 'male' : 'female';
+                      return (
                        <div key={mentor.id} className="flex items-center space-x-3">
-                         <img src={mentor.avatar} alt={mentor.name} className="w-12 h-12 rounded-full"/>
+                         <Avatar gender={gender} src={mentor.avatar} alt={mentor.name} className="w-12 h-12 rounded-full"/>
                          <div>
                             <p className="font-semibold text-gray-800">{mentor.name}</p>
                             <p className="text-sm text-gray-500">{mentor.title}</p>
                          </div>
                        </div>
-                    ))}
+                    )})}
                   </div>
                 </Card>
              </div>
@@ -200,10 +203,12 @@ const PassportPage: React.FC<PassportPageProps> = ({ user, pathways }) => {
         {activeTab === 'Feedback' && (
            <div className="space-y-6">
              <h2 className="text-2xl font-bold mb-0">{t('passport.feedbackTitle')}</h2>
-             {FEEDBACKS.map((feedback, index) => (
+             {FEEDBACKS.map((feedback, index) => {
+                const gender = feedback.mentorName.startsWith('Dr.') ? 'male' : 'female';
+                return (
                 <div key={index} className="bg-white rounded-xl shadow-md p-6">
                     <div className="flex items-start space-x-4">
-                        <img src={feedback.mentorAvatar} alt={feedback.mentorName} className="w-12 h-12 rounded-full" />
+                        <Avatar gender={gender} src={feedback.mentorAvatar} alt={feedback.mentorName} className="w-12 h-12 rounded-full" />
                         <div>
                             <p className="font-semibold text-gray-900">{`"${feedback.comment}"`}</p>
                             <p className="text-sm text-gray-600 mt-2">
@@ -212,7 +217,7 @@ const PassportPage: React.FC<PassportPageProps> = ({ user, pathways }) => {
                         </div>
                     </div>
                 </div>
-             ))}
+             )})}
            </div>
         )}
       </div>

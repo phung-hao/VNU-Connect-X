@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from '../lib/i18n';
 import { Page } from '../types';
-import { ConnectIcon, PassportBookIcon, PathwaysRoadIcon, ChevronDownIcon } from '../components/icons';
+import { ShareIcon, TargetIcon, GlobeIcon, CheckCircleIcon } from '../components/icons';
 
 interface AboutPageProps {
   setActivePage: (page: Page) => void;
@@ -23,20 +23,31 @@ const HeroIllustration: React.FC = () => (
     </div>
 );
 
+const Section: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
+    <div className="bg-white rounded-xl shadow-md p-8">
+        <h2 className="text-2xl font-bold text-gray-900 text-center mb-6 uppercase tracking-wider">{title}</h2>
+        {children}
+    </div>
+);
 
-const InfoSection: React.FC<{ title: string; children: React.ReactNode; defaultOpen?: boolean }> = ({ title, children, defaultOpen = false }) => {
-    return (
-        <details className="bg-white rounded-xl shadow-md overflow-hidden open:ring-2 open:ring-primary/50 transition-shadow duration-300" open={defaultOpen}>
-            <summary className="p-6 font-bold text-lg cursor-pointer flex justify-between items-center list-none">
-                <span className="text-gray-900">{title}</span>
-                <ChevronDownIcon className="w-5 h-5 text-gray-500 chevron-rotate" />
-            </summary>
-            <div className="p-6 pt-0 text-gray-700 leading-relaxed space-y-4">
-                {children}
-            </div>
-        </details>
-    );
-};
+const VisionPoint: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+    <li className="flex items-start space-x-3">
+        <div className="flex-shrink-0 pt-1">
+            <CheckCircleIcon className="w-5 h-5 text-primary" />
+        </div>
+        <p className="text-gray-700 leading-relaxed text-base">{children}</p>
+    </li>
+);
+
+const MeaningCard: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => (
+    <div className="text-center p-4">
+        <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mx-auto mb-4">
+            {icon}
+        </div>
+        <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
+        <p className="text-gray-600 mt-2">{description}</p>
+    </div>
+);
 
 
 const AboutPage: React.FC<AboutPageProps> = ({ setActivePage }) => {
@@ -64,39 +75,40 @@ const AboutPage: React.FC<AboutPageProps> = ({ setActivePage }) => {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto space-y-6">
-        <InfoSection title={t('about.vision.title')} defaultOpen={true}>
-          <p>{t('about.vision.content1')}</p>
-          <p>{t('about.vision.content2')}</p>
-          <p className="font-semibold text-primary italic">"{t('about.vision.philosophy')}"</p>
-        </InfoSection>
-
-        <InfoSection title={t('about.structure.title')}>
-          <p>{t('about.structure.content')}</p>
-          <ul className="list-none space-y-4 mt-4">
-            <li className="flex items-start space-x-3">
-              <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-primary/10 text-primary mt-1"><ConnectIcon className="w-4 h-4" /></div>
-              <span><strong className="font-bold text-gray-800">CONNECT</strong> – {t('about.structure.pillars.connect').split('–')[1]}</span>
-            </li>
-            <li className="flex items-start space-x-3">
-              <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-primary/10 text-primary mt-1"><PassportBookIcon className="w-4 h-4" /></div>
-              <span><strong className="font-bold text-gray-800">PASSPORT</strong> – {t('about.structure.pillars.passport').split('–')[1]}</span>
-            </li>
-            <li className="flex items-start space-x-3">
-              <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-primary/10 text-primary mt-1"><PathwaysRoadIcon className="w-4 h-4" /></div>
-              <span><strong className="font-bold text-gray-800">PATHWAYS</strong> – {t('about.structure.pillars.pathways').split('–')[1]}</span>
-            </li>
+      <div className="max-w-4xl mx-auto space-y-8">
+        <Section title={t('about.vision.title')}>
+          <p className="text-center text-gray-700 mb-6 font-medium text-base leading-relaxed">{t('about.vision.intro')}</p>
+          <ul className="space-y-4 text-left">
+            <VisionPoint>{t('about.vision.point1')}</VisionPoint>
+            <VisionPoint>{t('about.vision.point2')}</VisionPoint>
+            <VisionPoint>{t('about.vision.point3')}</VisionPoint>
           </ul>
-        </InfoSection>
+        </Section>
+        
+        <Section title={t('about.meaning.title')}>
+          <p className="text-center text-gray-600 mb-8">{t('about.meaning.intro')}</p>
+          <div className="grid sm:grid-cols-3 gap-6">
+            <MeaningCard 
+              icon={<TargetIcon className="w-8 h-8" />}
+              title={t('about.meaning.experience.title')}
+              description={t('about.meaning.experience.description')}
+            />
+            <MeaningCard 
+              icon={<ShareIcon className="w-8 h-8" />}
+              title={t('about.meaning.exchange.title')}
+              description={t('about.meaning.exchange.description')}
+            />
+            <MeaningCard 
+              icon={<GlobeIcon className="w-8 h-8" />}
+              title={t('about.meaning.explore.title')}
+              description={t('about.meaning.explore.description')}
+            />
+          </div>
+        </Section>
 
-        <InfoSection title={t('about.impact.title')}>
-          <p>{t('about.impact.content1')}</p>
-          <p>{t('about.impact.content2')}</p>
-        </InfoSection>
-
-        <InfoSection title={t('about.credits.title')}>
-          <p>{t('about.credits.content')}</p>
-        </InfoSection>
+        <Section title={t('about.team.title')}>
+          <p className="text-center text-gray-700 text-lg font-semibold">{t('about.team.content')}</p>
+        </Section>
       </div>
 
       <div className="max-w-4xl mx-auto mt-16 text-center">

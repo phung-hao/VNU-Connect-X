@@ -230,3 +230,38 @@ export const LinkIcon: React.FC<IconProps> = ({ className = 'w-6 h-6' }) => (
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"></path>
     </svg>
 );
+
+const MALE_FALLBACK = 'https://randomuser.me/api/portraits/men/45.jpg';
+const FEMALE_FALLBACK = 'https://randomuser.me/api/portraits/women/45.jpg';
+
+type AvatarProps = {
+    src?: string;
+    alt: string;
+    gender: 'male' | 'female';
+    className?: string;
+};
+
+export const Avatar: React.FC<AvatarProps> = ({ src, alt, gender, className }) => {
+    const [currentSrc, setCurrentSrc] = React.useState(src);
+
+    const fallback = gender === 'male' ? MALE_FALLBACK : FEMALE_FALLBACK;
+
+    React.useEffect(() => {
+        setCurrentSrc(src || fallback);
+    }, [src, fallback]);
+
+    const handleError = () => {
+        if (currentSrc !== fallback) {
+            setCurrentSrc(fallback);
+        }
+    };
+
+    return (
+        <img
+            src={currentSrc}
+            alt={alt}
+            className={className}
+            onError={handleError}
+        />
+    );
+};
