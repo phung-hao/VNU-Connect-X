@@ -345,7 +345,7 @@ const viTranslations: Translations = {
         title: "Kết nối Cố vấn",
         desc: "Kết nối với giảng viên, cựu sinh viên, và chuyên gia để nhận định hướng."
       },
-// Fix: Merged duplicate 'peers', 'alumni', and 'companies' translation keys.
+      // FIX: Merged misplaced translation keys for peers, alumni, and companies into the correct `smartMatching` object.
       peers: {
           title: "Hợp tác cùng bạn bè",
           desc: "Tìm sinh viên có cùng mục tiêu hoặc kỹ năng bổ trợ để lập nhóm.",

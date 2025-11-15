@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import ConnectPage from './pages/ConnectPage';
@@ -6,6 +6,7 @@ import PassportPage from './pages/PassportPage';
 import PathwaysPage from './pages/PathwaysPage';
 import AboutPage from './pages/AboutPage';
 import SettingsPage from './pages/SettingsPage';
+import SplashScreen from './components/SplashScreen';
 import { Page, Pathway, User, Mission, SubmissionType } from './types';
 import { I18nProvider, useTranslation } from './lib/i18n';
 import { PATHWAYS, CURRENT_USER } from './constants';
@@ -15,6 +16,24 @@ const AppContent: React.FC = () => {
   const { t } = useTranslation();
   const [pathways, setPathways] = useState<Pathway[]>(PATHWAYS);
   const [currentUser, setCurrentUser] = useState<User>(CURRENT_USER);
+  const [isSplashVisible, setIsSplashVisible] = useState(true);
+  const [isSplashActive, setIsSplashActive] = useState(true);
+
+  useEffect(() => {
+    // Hide splash screen after a delay
+    const fadeTimer = setTimeout(() => {
+      setIsSplashActive(false);
+    }, 2500); // Start fading out after 2.5 seconds
+
+    const visibilityTimer = setTimeout(() => {
+      setIsSplashVisible(false);
+    }, 3000); // Remove from DOM after 3 seconds (2.5s display + 0.5s fade)
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(visibilityTimer);
+    };
+  }, []);
 
   const handleMissionSubmission = (
     pathwayId: number,
@@ -38,7 +57,8 @@ const AppContent: React.FC = () => {
     setPathways(prevPathways => {
       return prevPathways.map(p => {
         if (p.id === pathwayId) {
-          const newMissions = p.missions.map((mission, index) => {
+          // FIX: Explicitly type `newMissions` as `Mission[]` to prevent `status` property from being inferred as `string`.
+          const newMissions: Mission[] = p.missions.map((mission, index) => {
             // Complete current mission
             if (index === missionIndex) {
               return { 
@@ -130,6 +150,7 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800 flex flex-col">
+      {isSplashVisible && <SplashScreen isActive={isSplashActive} />}
       <Header activePage={activePage} setActivePage={setActivePage} />
       <main className="flex-grow">
         {renderPage()}
