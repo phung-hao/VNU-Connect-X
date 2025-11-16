@@ -160,6 +160,11 @@ const enTranslations: Translations = {
     title1: "Gamified ",
     titleHighlight: "Career Journeys",
     subtitle: "Follow structured roadmaps to build skills, gain experience, and reach your goals.",
+    titles: {
+        pmFresher: "7 foundational tasks to get familiar with the role of a Product Manager Fresher",
+        dataAnalyst: "Data Analyst Launchpad",
+        effectiveCommunication: "Effective Communication"
+    },
     xpEarned: "+{xp} XP Earned",
     levelUp: "Level Up!",
     greatJob: "Great Job!",
@@ -428,6 +433,11 @@ const viTranslations: Translations = {
     title1: "Hành trình sự nghiệp ",
     titleHighlight: "được game hóa",
     subtitle: "Thực hiện các lộ trình có cấu trúc để xây dựng kỹ năng, tích lũy kinh nghiệm và đạt được mục tiêu.",
+    titles: {
+        pmFresher: "7 nhiệm vụ nền tảng để làm quen với vai trò Product Manager Fresher",
+        dataAnalyst: "Lộ trình cho Chuyên viên Phân tích Dữ liệu",
+        effectiveCommunication: "Giao tiếp Hiệu quả"
+    },
     xpEarned: "+{xp} XP đã nhận",
     levelUp: "Thăng Cấp!",
     greatJob: "Tuyệt vời!",

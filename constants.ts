@@ -164,7 +164,7 @@ export const PROJECTS: Project[] = [
 export const PATHWAYS: Pathway[] = [
   { 
     id: 1, 
-    title: 'Lộ trình Product Manager Fresher',
+    title: 'pathways.titles.pmFresher',
     category: 'Career', 
     missions: [
       { 
@@ -223,7 +223,7 @@ export const PATHWAYS: Pathway[] = [
   ]},
   { 
     id: 2, 
-    title: 'Data Analyst Launchpad', 
+    title: 'pathways.titles.dataAnalyst', 
     category: 'Critical Thinking',
     missions: [
       { 
@@ -276,7 +276,7 @@ export const PATHWAYS: Pathway[] = [
   ]},
   { 
     id: 3, 
-    title: 'Effective Communication', 
+    title: 'pathways.titles.effectiveCommunication', 
     category: 'Communication',
     missions: [
       { 

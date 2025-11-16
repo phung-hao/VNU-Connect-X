@@ -384,7 +384,7 @@ const PathwaysPage: React.FC<PathwaysPageProps> = ({ pathways, currentUser, onMi
                                         <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-semibold ${catStyle.bg} ${catStyle.text}`}>
                                             {catStyle.icon} {pathway.category}
                                         </div>
-                                        <h3 className="text-xl font-bold text-gray-900 mt-2">{pathway.title}</h3>
+                                        <h3 className="text-xl font-bold text-gray-900 mt-2">{t(pathway.title)}</h3>
                                     </div>
                                     <div className="text-right flex-shrink-0">
                                         <p className="text-lg font-bold text-yellow-600">{totalXp} XP</p>
