@@ -177,8 +177,8 @@ const App: React.FC = () => {
 export default App;
 
 import React, { useEffect, useState } from 'react';
-import SplashScreen from './components/SplashScreen'; // đường dẫn tùy theo bạn đặt
-import HomePage from './pages/HomePage'; // hoặc component chính của bạn
+import SplashScreen from './components/SplashScreen'; 
+import HomePage from './pages/HomePage';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -186,7 +186,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 3000); // thời gian hiển thị logo (3 giây)
+    }, 3000); 
 
     return () => clearTimeout(timer);
   }, []);
