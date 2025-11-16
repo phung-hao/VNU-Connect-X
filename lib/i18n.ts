@@ -26,7 +26,7 @@ const enTranslations: Translations = {
     titleHighlight: "Academic & Career",
     title2: " Ecosystem",
     subtitle: "VNU-CONNECT X bridges learning and career through micro-projects, skill verification, and guided pathways.",
-    explore: "Explore Micro-Gigs",
+    explore: "Explore Micro-Projects",
     pillars: {
       connect: {
         title: "CONNECT",
@@ -50,7 +50,7 @@ const enTranslations: Translations = {
     subtitle: "Connect through action. Build real skills, real networks, real impact.",
     back: "Back to Connect Hub",
     tabs: {
-      microGigs: "Micro-Gigs",
+      microGigs: "Micro-Projects",
       smartMatching: "Smart Matching Hub"
     },
     filters: "Filters",
@@ -88,15 +88,26 @@ const enTranslations: Translations = {
       },
       peers: {
         title: "Peer Collaboration",
-        desc: "Find students with similar goals or complementary skills to team up."
+        desc: "Find students with similar goals or complementary skills to team up.",
+        // FIX: Added missing translation keys to match `vi.ts` and component usage.
+        subtitle: "AI suggests students with similar goals or complementary skills for you to collaborate with.",
+        connectNow: "Connect Now"
       },
       alumni: {
         title: "Alumni Network",
-        desc: "Get project feedback and career tips from recent graduates."
+        desc: "Get project feedback and career tips from recent graduates.",
+        // FIX: Added missing translation keys to match `vi.ts` and component usage.
+        subtitle: "Connect with successful alumni to learn from their experience.",
+        askForAdvice: "Ask for Advice"
       },
       companies: {
         title: "Company Matching",
-        desc: "Link up with partner companies based on your skills and interests."
+        desc: "Link up with partner companies based on your skills and interests.",
+        // FIX: Added missing translation keys to match `vi.ts` and component usage.
+        subtitle: "Discover opportunities from the university's top partners.",
+        roles: "Hiring Roles",
+        openGigs: "{count} open gigs",
+        connect: "Connect"
       }
     },
     mentors: {
@@ -118,7 +129,7 @@ const enTranslations: Translations = {
     Open: "Open",
     'In Progress': "In Progress",
     Completed: "Completed",
-    'Micro-Gig': "Micro-Gig",
+    'Micro-Project': "Micro-Project",
     'Shadow Project': "Shadow Project",
     Beginner: "Beginner",
     Intermediate: "Intermediate",
@@ -386,7 +397,7 @@ const viTranslations: Translations = {
     Open: "Đang mở",
     'In Progress': "Đang thực hiện",
     Completed: "Đã hoàn thành",
-    'Micro-Gig': "Dự án nhỏ",
+    'Micro-Project': "Dự án nhỏ",
     'Shadow Project': "Dự án thực tập",
     Beginner: "Cơ bản",
     Intermediate: "Trung bình",

@@ -71,7 +71,7 @@ export interface Project {
   duration: string;
   reward: string;
   description: string;
-  type: 'Micro-Gig' | 'Shadow Project';
+  type: 'Micro-Project' | 'Shadow Project';
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
   domain: 'Tech' | 'Marketing' | 'Design' | 'Business';
   status: 'Open' | 'In Progress' | 'Completed';

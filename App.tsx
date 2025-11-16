@@ -175,28 +175,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-import React, { useEffect, useState } from 'react';
-import SplashScreen from './components/SplashScreen'; 
-import HomePage from './pages/HomePage';
-
-function App() {
-  const [showSplash, setShowSplash] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 3000); 
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <>
-      <SplashScreen active={showSplash} />
-      {!showSplash && <HomePage />}
-    </>
-  );
-}
-
-export default App;

@@ -2,7 +2,7 @@ import React, { useState, useMemo, useRef } from 'react';
 import { PROJECTS, CURRENT_USER, MENTORS, USERS, ALUMNI, COMPANIES } from '../constants';
 import { Project, Mentor, User, Alumni, Company } from '../types';
 import { useTranslation } from '../lib/i18n';
-import { ClockIcon, StarIcon, CheckCircleIcon, UploadIcon, XIcon, CalendarIcon, TargetIcon, UserIcon, BriefcaseIcon, Avatar, MessageSquareIcon } from '../components/icons';
+import { ClockIcon, StarIcon, CheckCircleIcon, UploadIcon, XIcon, CalendarIcon, TargetIcon, UserIcon, BriefcaseIcon, Avatar, MessageSquareIcon, UsersIcon, AcademicCapIcon } from '../components/icons';
 
 // =================================================================================
 // Shared Components
@@ -50,7 +50,7 @@ const BackButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
 }
 
 // =================================================================================
-// Micro-Gigs View Components
+// Micro-Projects View Components
 // =================================================================================
 
 const StatusIndicator: React.FC<{ status: Project['status'] }> = ({ status }) => {
@@ -184,7 +184,7 @@ const ProjectDetailModal: React.FC<{ project: Project; onClose: () => void }> = 
     );
 };
 
-const MicroGigsView: React.FC = () => {
+const MicroProjectsView: React.FC = () => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -234,7 +234,7 @@ const MicroGigsView: React.FC = () => {
             <div className="border-t border-gray-200" />
             <h2 className="text-xl font-bold">{t('connect.filters')}</h2>
             <FilterGroup title={t('connect.status.title')} options={['All', 'Open', 'In Progress', 'Completed']} selected={filters.status} onChange={(v) => handleFilterChange('status', v)} />
-            <FilterGroup title={t('connect.projectType')} options={['All', 'Micro-Gig', 'Shadow Project']} selected={filters.type} onChange={(v) => handleFilterChange('type', v)} />
+            <FilterGroup title={t('connect.projectType')} options={['All', 'Micro-Project', 'Shadow Project']} selected={filters.type} onChange={(v) => handleFilterChange('type', v)} />
             <FilterGroup title={t('connect.difficulty')} options={['All', 'Beginner', 'Intermediate', 'Advanced']} selected={filters.difficulty} onChange={(v) => handleFilterChange('difficulty', v)} />
             <FilterGroup title={t('connect.domain')} options={['All', 'Tech', 'Marketing', 'Design', 'Business']} selected={filters.domain} onChange={(v) => handleFilterChange('domain', v)} />
           </div>
@@ -518,26 +518,9 @@ const SmartMatchingHubView: React.FC<{ onCardClick: (view: string) => void }> = 
     );
 };
 
-const UsersIcon: React.FC<{ className?: string }> = ({ className = 'w-6 h-6' }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-    <circle cx="9" cy="7" r="4"></circle>
-    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-  </svg>
-);
-
-const AcademicCapIcon: React.FC<{ className?: string }> = ({ className = 'w-6 h-6' }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
-        <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375z" />
-        <path fillRule="evenodd" d="M3.087 9l.54 9.176A3 3 0 006.62 21h10.757a3 3 0 002.995-2.824L20.914 9H3.087z" clipRule="evenodd" />
-    </svg>
-);
-
-
 const ConnectPage: React.FC = () => {
     const { t } = useTranslation();
-    const [activeTab, setActiveTab] = useState('gigs');
+    const [activeTab, setActiveTab] = useState('projects');
     const [activeView, setActiveView] = useState<string | null>(null);
 
     const renderActiveView = () => {
@@ -569,8 +552,8 @@ const ConnectPage: React.FC = () => {
             <div className="mb-8 border-b border-gray-200">
                 <nav className="-mb-px flex space-x-8 justify-center" aria-label="Tabs">
                     <button
-                        onClick={() => setActiveTab('gigs')}
-                        className={`${activeTab === 'gigs' ? 'border-primary text-primary' : 'border-transparent text-gray-500 hover:text-gray-700'} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg`}
+                        onClick={() => setActiveTab('projects')}
+                        className={`${activeTab === 'projects' ? 'border-primary text-primary' : 'border-transparent text-gray-500 hover:text-gray-700'} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg`}
                     >
                         {t('connect.tabs.microGigs')}
                     </button>
@@ -584,7 +567,7 @@ const ConnectPage: React.FC = () => {
             </div>
 
             {/* Tab Content */}
-            {activeTab === 'gigs' ? <MicroGigsView /> : <SmartMatchingHubView onCardClick={setActiveView} />}
+            {activeTab === 'projects' ? <MicroProjectsView /> : <SmartMatchingHubView onCardClick={setActiveView} />}
         </div>
     );
 };

@@ -231,6 +231,23 @@ export const LinkIcon: React.FC<IconProps> = ({ className = 'w-6 h-6' }) => (
     </svg>
 );
 
+{/* FIX: Add UsersIcon and AcademicCapIcon to centralize icon components. */}
+export const UsersIcon: React.FC<{ className?: string }> = ({ className = 'w-6 h-6' }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="9" cy="7" r="4"></circle>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+  </svg>
+);
+
+export const AcademicCapIcon: React.FC<{ className?: string }> = ({ className = 'w-6 h-6' }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
+        <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375z" />
+        <path fillRule="evenodd" d="M3.087 9l.54 9.176A3 3 0 006.62 21h10.757a3 3 0 002.995-2.824L20.914 9H3.087z" clipRule="evenodd" />
+    </svg>
+);
+
 const MALE_FALLBACK = 'https://randomuser.me/api/portraits/men/45.jpg';
 const FEMALE_FALLBACK = 'https://randomuser.me/api/portraits/women/45.jpg';
 
