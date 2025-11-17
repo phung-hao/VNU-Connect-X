@@ -197,6 +197,42 @@ export const PATHWAYS: Pathway[] = [
         duration: 'Varies by project'
       },
       { 
+        title: 'Analyze a competitor app', 
+        description: 'Analyze a competitor app and identify 3 key strengths and weaknesses. Submit your findings in a short report.', 
+        status: 'locked', 
+        xp: 75, 
+        type: 'reflect', 
+        skill: 'Competitive Analysis', 
+        submissionType: ['reflection', 'file'],
+        difficulty: 'Beginner',
+        duration: 'Approx. 4 hours',
+        deadline: '2025-11-30'
+      },
+      { 
+        title: 'Create a simple user persona', 
+        description: 'Create a simple user persona for a target user segment of a product you use. Include their goals, motivations, and pain points.', 
+        status: 'locked', 
+        xp: 60, 
+        type: 'project', 
+        skill: 'User Personas', 
+        submissionType: ['file'],
+        difficulty: 'Beginner',
+        duration: 'Approx. 3 hours',
+        deadline: '2025-12-10'
+      },
+      { 
+        title: 'Map a basic user journey', 
+        description: 'Map a basic user journey for a common feature (e.g., onboarding, signing up). Visualize the steps a user takes to complete their goal.', 
+        status: 'locked', 
+        xp: 80, 
+        type: 'project', 
+        skill: 'User Journey Mapping', 
+        submissionType: ['file'],
+        difficulty: 'Intermediate',
+        duration: 'Approx. 4 hours',
+        deadline: '2025-12-20'
+      },
+      { 
         title: 'Write a reflection on a product you admire', 
         description: 'Choose a digital product (app or website) you use frequently. Write a 500-word analysis on its strengths, weaknesses, and a feature you would propose to improve it. Submit your analysis as a PDF.', 
         status: 'locked', 
@@ -206,7 +242,7 @@ export const PATHWAYS: Pathway[] = [
         submissionType: ['reflection', 'file'],
         difficulty: 'Intermediate',
         duration: 'Approx. 4 hours',
-        deadline: '2024-12-31'
+        deadline: '2026-01-10'
       },
       { 
         title: 'Receive mentor feedback on a case study', 
