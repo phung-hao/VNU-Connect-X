@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import type { Pathway, Mission, PathwayCategory, User, MissionStatus } from '../types';
 import { CheckCircleIcon, LockIcon, MessageSquareIcon, TargetIcon, UserIcon, XIcon, BrainIcon, BriefcaseIcon, StarIcon, ClockIcon, CalendarIcon, UploadIcon, LinkIcon, Avatar } from '../components/icons';
 import { useTranslation } from '../lib/i18n';
+import Confetti from '../components/Confetti';
 
 const MissionTypeIcon: React.FC<{ type: Mission['type'], className?: string }> = ({ type, className = "w-5 h-5" }) => {
     const icons = {
@@ -246,27 +247,43 @@ const MissionDetailModal: React.FC<{
 };
 
 
-const CompletionModal: React.FC<{ missionInfo: { mission: Mission, newXp: number, oldLevel: number, newLevel: number } | null, onClose: () => void }> = ({ missionInfo, onClose }) => {
+const CelebrationModal: React.FC<{ missionInfo: { mission: Mission, newXp: number, oldLevel: number, newLevel: number } | null, onClose: () => void }> = ({ missionInfo, onClose }) => {
     const { t } = useTranslation();
     if (!missionInfo) return null;
-    const { mission, newXp, oldLevel, newLevel } = missionInfo;
+
+    const { mission, oldLevel, newLevel } = missionInfo;
     const didLevelUp = newLevel > oldLevel;
     
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center relative transform transition-all scale-100 opacity-100">
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4 animate-fade-in">
+            <Confetti />
+            <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center relative">
                  <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
                     <XIcon className="w-6 h-6" />
                 </button>
                 <div className="text-6xl mb-4">{didLevelUp ? '🚀' : '🎉'}</div>
                 <h2 className="text-2xl font-bold text-gray-900">{didLevelUp ? t('pathways.levelUp') : t('pathways.greatJob')}</h2>
-                <p className="text-gray-600 mt-2 mb-4">{t('pathways.missionComplete')} <span className="font-semibold text-primary">{mission.title}</span></p>
+                <p className="text-gray-600 mt-2 mb-4">
+                    {t('pathways.completionMessage')}
+                </p>
                 <div className="bg-yellow-100 text-yellow-800 text-xl font-bold py-3 px-6 rounded-full inline-block mb-4">
                     {t('pathways.xpEarned', { xp: mission.xp })}
                 </div>
                  {didLevelUp && (
                     <div className="bg-primary/10 text-primary text-lg font-bold py-2 px-4 rounded-full">
                        {t('pathways.level', { level: oldLevel })} → {t('pathways.level', { level: newLevel })}
+                    </div>
+                )}
+                {mission.badge && (
+                    <div className="mt-6 pt-4 border-t">
+                        <p className="font-bold text-gray-700 mb-2">{t('pathways.badgeUnlocked')}</p>
+                        <div className="flex items-center space-x-3 bg-gray-100 p-3 rounded-lg">
+                            <span className="text-3xl">{mission.badge.icon}</span>
+                            <div className="text-left">
+                                <p className="font-semibold">{mission.badge.title}</p>
+                                <p className="text-xs text-gray-600">{mission.badge.description}</p>
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>
@@ -402,7 +419,7 @@ const PathwaysPage: React.FC<PathwaysPageProps> = ({ pathways, currentUser, onMi
                     })}
                 </div>
             </div>
-            <CompletionModal missionInfo={completionInfo} onClose={() => setCompletionInfo(null)} />
+            <CelebrationModal missionInfo={completionInfo} onClose={() => setCompletionInfo(null)} />
             {currentMissionInfo && currentMissionInfo.mission && (
                 <MissionDetailModal
                     missionInfo={currentMissionInfo as { mission: Mission; pathwayId: number; missionIndex: number; }}
